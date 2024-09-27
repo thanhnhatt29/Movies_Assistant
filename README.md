@@ -27,7 +27,7 @@ The main use cases include:
 
 ## Dataset
 
-The dataset used for this project is the [Movies Daily Update Dataset](https://www.kaggle.com/datasets/akshaypawar7/millions-of-movies), sourced from Kaggle. The raw dataset consists of approximately 700,000 movies, collected from the TMDB dataset.
+The dataset used for this project is the [Movies Daily Update Dataset](https://www.kaggle.com/datasets/akshaypawar7/millions-of-movies), sourced from Kaggle. The raw dataset consists of approximately 720,000 movies, collected from the TMDB dataset.
 
 After a thorough process of cleaning and filtering, the following key attributes were retained to focus on relevant movie information:
 

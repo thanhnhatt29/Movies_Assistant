@@ -11,3 +11,5 @@ services:
       - "9300:9300"
     mem_limit: 4g
     restart: always
+    volumes:
+      - ./elasticsearch-data:/usr/share/elasticsearch/data
