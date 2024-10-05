@@ -8,10 +8,14 @@ transformers = "*"
 pandas = "*"
 elasticsearch = "*"
 scikit-learn = "*"
+streamlit = "*"
+flask = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 tqdm = "*"
 notebook = "*"
+hyperopt = "*"
 
 [requires]
 python_version = "3.11"
