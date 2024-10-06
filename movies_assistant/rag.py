@@ -4,14 +4,12 @@ from time import time
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 from elasticsearch import Elasticsearch
-import ingest
 
 load_dotenv()
 
-ingest.load_index()
+ELASTIC_URL = os.getenv("ELASTIC_URL","http://elasticsearch:9200")
+INDEX_NAME = os.getenv("INDEX_NAME", "movies")
 HUGGINGFACE_TOKEN = os.getenv('HUGGINGFACE_TOKEN')
-es_client = Elasticsearch('http://localhost:9200')
-index_name = "movies"
 
 prompt_template = """
 You're a movie assistant. Answer the QUESTION based on the CONTEXT from our movies data.
@@ -66,6 +64,8 @@ and provide your evaluation in parsable JSON without using code blocks:
 
 def elastic_search(query):
 
+    es_client = Elasticsearch(ELASTIC_URL)
+    
     search_query = {
         "size": 10,
         "query": {
@@ -78,7 +78,7 @@ def elastic_search(query):
         }
     }
 
-    response = es_client.search(index=index_name, body=search_query)
+    response = es_client.search(index=INDEX_NAME, body=search_query)
 
     result_docs = [hit['_source'] for hit in response['hits']['hits']]
 
@@ -129,7 +129,7 @@ def evaluate_relevance(question, answer):
         return result, tokens
 
 def rag(query, model='mistralai/Mixtral-8x7B-Instruct-v0.1'):
-
+    print(ELASTIC_URL)
     t0 = time()
 
     search_results = elastic_search(query)

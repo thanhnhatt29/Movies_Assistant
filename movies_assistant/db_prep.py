@@ -12,8 +12,8 @@ os.environ['RUN_TIMEZONE_CHECK'] = '0'
 load_dotenv()
 
 
-ELASTIC_URL = os.getenv("ELASTIC_URL_LOCAL")
-INDEX_NAME = os.getenv("INDEX_NAME")
+ELASTIC_URL = os.getenv("ELASTIC_URL_LOCAL", "http://localhost:9200")
+INDEX_NAME = os.getenv("INDEX_NAME", "movies")
 
 len_documents = 722359
 

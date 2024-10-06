@@ -8,9 +8,10 @@ transformers = "*"
 pandas = "*"
 elasticsearch = "*"
 scikit-learn = "*"
-streamlit = "*"
 flask = "*"
 psycopg2-binary = "*"
+gunicorn = "*"
+python-dotenv = "*"
 
 [dev-packages]
 tqdm = "*"

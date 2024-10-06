@@ -4,12 +4,12 @@ WORKDIR /app
 
 RUN pip install pipenv
 
-COPY data/data.csv data/data.csv
+COPY data/movies.csv data/movies.csv
 COPY ["Pipfile", "Pipfile.lock", "./"]
 
 RUN pipenv install --deploy --ignore-pipfile --system
 
-COPY fitness_assistant .
+COPY movies_assistant .
 
 EXPOSE 5000
 
