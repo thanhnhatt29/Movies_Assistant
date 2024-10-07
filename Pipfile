@@ -17,6 +17,11 @@ python-dotenv = "*"
 tqdm = "*"
 notebook = "*"
 hyperopt = "*"
+questionary = "*"
+requests = "*"
+pgcli = "*"
+ipywidgets = "*"
+jupyter = "*"
 
 [requires]
 python_version = "3.11"
