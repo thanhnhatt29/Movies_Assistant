@@ -20,6 +20,10 @@ len_documents = 722359
 
 def load_data(data_path='../data/movies.csv'):
     df = pandas.read_csv(data_path, keep_default_na=False)
+    
+    drop_col = ['recommendations', 'backdrop_path', 'poster_path']
+    df.drop(drop_col, axis=1, inplace=True)
+    
     df['release_date'].replace('', '1970-01-01', inplace=True)
 
     documents = df.to_dict(orient='records')
