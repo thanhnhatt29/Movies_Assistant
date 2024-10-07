@@ -374,6 +374,7 @@ The basic approach - using `ElasticSearch` without any boosting - gave the follo
 - Hit rate: 69%
 - MRR: 64%
 
+I'm tunning boost with hyperopt but the result doesn't improve, check in [retrieval_evaluation.ipynb](notebook\retrieval_evaluation.ipynb)
 <!-- The improved version (with tuned boosting):
 
 - Hit rate: 
